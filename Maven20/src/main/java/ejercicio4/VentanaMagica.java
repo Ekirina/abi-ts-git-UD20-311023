@@ -10,10 +10,12 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
+import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.awt.event.WindowStateListener;
 
 import javax.swing.JTextField;
 
@@ -61,39 +63,53 @@ public class VentanaMagica extends JFrame {
         	
 			@Override
 			public void windowActivated(WindowEvent arg0) {
-				area.append("Estoy activa.");
+				area.append("Estoy activa.\n");
 			}
 
 			@Override
 			public void windowClosed(WindowEvent arg0) {
-				area.append("Me voy.");
+				area.append("Me voy.\n");
 			}
 
 			@Override
 			public void windowClosing(WindowEvent arg0) {
-				area.append("Intenta cerrar la ventana ¿verdad?");
+				area.append("Intenta cerrar la ventana ¿verdad?\n");
 			}
 
 			@Override
 			public void windowDeactivated(WindowEvent arg0) {
-				area.append("¡Ey! atiéndeme");	
+				area.append("¡Ey! atiéndeme\n");	
 			}
 
 			@Override
 			public void windowDeiconified(WindowEvent arg0) {
-				area.append("Gracias por restaurarme");
+				area.append("Gracias por restaurarme\n");
 			}
 
 			@Override
 			public void windowIconified(WindowEvent arg0) {
-				area.append("Me escondo, así no molesto.");
+				area.append("Me escondo, así no molesto.\n");
 			}
 
 			@Override
 			public void windowOpened(WindowEvent arg0) {
-				area.append("¡Ey! Ya estoy aquí ¿Qué tal?");
+				area.append("¡Ey! Ya estoy aquí ¿Qué tal?\n");
 			}
         };
+        this.addWindowListener(ventana);
+
+		addWindowStateListener(new WindowStateListener() {
+			public void windowStateChanged(WindowEvent arg0) {
+				resize(arg0);
+			}
+			private void resize(WindowEvent e) {
+				if((e.getNewState() & Frame.MAXIMIZED_BOTH) == Frame.MAXIMIZED_BOTH) {
+					area.setText(area.getText() + "¡He aumentado de tamaño! \n");
+				}else if ((e.getNewState() & Frame.NORMAL) == Frame.NORMAL) {
+					area.setText(area.getText() + "Este es mi tamaño original ¿Te gusta? \n");
+				}
+			}
+		});
 	}
 
 }
