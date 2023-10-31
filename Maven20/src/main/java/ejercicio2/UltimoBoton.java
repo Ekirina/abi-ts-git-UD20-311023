@@ -10,7 +10,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
 
-public class ultimoBoton extends JFrame {
+public class UltimoBoton extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -18,7 +18,7 @@ public class ultimoBoton extends JFrame {
 	private JButton button2;
 	private JLabel aviso;
 
-	public ultimoBoton() {
+	public UltimoBoton() {
 		setTitle("Los botones");
 		setBounds(650, 300, 300, 200);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
