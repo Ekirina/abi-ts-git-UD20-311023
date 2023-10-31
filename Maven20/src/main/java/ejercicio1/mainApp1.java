@@ -1,6 +1,4 @@
-package Ejercicio1;
-
-import Ejercicio1.Ventana;
+package ejercicio1;
 
 public class mainApp1 
 {
