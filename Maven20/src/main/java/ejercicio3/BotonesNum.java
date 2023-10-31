@@ -60,25 +60,18 @@ public class BotonesNum extends JFrame {
 		button2.setBackground(new Color(0, 128, 0));
 		button2.setBounds(159, 90, 89, 23);
 		contentPane.add(button2);
-		
+	
 		ActionListener al1=new ActionListener(){ 
-
 			@Override
 			public void actionPerformed(ActionEvent e) {	
-				if(button1.getActionCommand() != null) {
-					contador1 ++;
-				}
+				contador1 ++;
 			    avisobtn1.setText("Has pulsado el botón " + button1.getActionCommand() + " || " + contador1 + " veces");		
 			}
 		};
 		ActionListener al2=new ActionListener(){ 
-
 			@Override
 			public void actionPerformed(ActionEvent e) {	
-			
-				if(button2.getActionCommand() != null) {
-					contador2++;
-				}
+				contador2 ++;
 			    avisobtn2.setText("Has pulsado el botón " + button2.getActionCommand() + " || " + contador2 + " veces");
 			}
 		};
