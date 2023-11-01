@@ -78,17 +78,17 @@ public class VentanaMagica extends JFrame {
 
 			@Override
 			public void windowDeactivated(WindowEvent arg0) {
-				area.append("¡Ey! atiéndeme\n");	
+				area.append("¡Ey! atiéndeme. No me prestas atención...\n");	
 			}
 
 			@Override
 			public void windowDeiconified(WindowEvent arg0) {
-				area.append("Gracias por restaurarme\n");
+				area.append("Gracias por restaurarme.\n");
 			}
 
 			@Override
 			public void windowIconified(WindowEvent arg0) {
-				area.append("Me escondo, así no molesto.\n");
+				area.append("Me escondo, así no molesto. Está bien minimizarse a veces.\n");
 			}
 
 			@Override
@@ -105,7 +105,7 @@ public class VentanaMagica extends JFrame {
 			private void resize(WindowEvent e) {
 				if((e.getNewState() & Frame.MAXIMIZED_BOTH) == Frame.MAXIMIZED_BOTH) {
 					area.setText(area.getText() + "¡He aumentado de tamaño! \n");
-				}else if ((e.getNewState() & Frame.NORMAL) == Frame.NORMAL) {
+				}else if ((e.getNewState()) == Frame.NORMAL) {
 					area.setText(area.getText() + "Este es mi tamaño original ¿Te gusta? \n");
 				}
 			}
